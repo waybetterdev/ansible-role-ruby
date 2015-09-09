@@ -1,0 +1,17 @@
+---
+- name: Install ruby and rubygems.
+  yum: "name={{ item }} state=present"
+  with_items:
+    - ruby
+    - ruby-devel
+    - rubygems
+
+- include: install-version.yml
+  when: ruby_from_package == true
+
+- name: Install Bundler.
+  gem: name=bundler state=present user_install=no
+
+- name: Add bundle symlink.
+  file: src=/usr/local/bin/bundle dest=/usr/bin/bundle state=link
+  when: ruby_from_package == true

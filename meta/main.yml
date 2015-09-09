@@ -1,0 +1,16 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: jasonrsavino
+  description: Install Ruby and Bundler.
+  company: "WayBetter"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.7
+  platforms:
+  - name: EL
+    versions:
+    - all
+  categories:
+    - development
+    - web
